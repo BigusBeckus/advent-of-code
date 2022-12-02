@@ -1,4 +1,4 @@
 # Advent of Code - Solutions
 
-by [https://github.com/BigusBeckus](BigusBeckus)
+by [BigusBeckus](https://github.com/BigusBeckus)
 

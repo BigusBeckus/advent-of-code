@@ -1,4 +1,4 @@
-# Advent of Code 2022 f-olutions - Solutions (in TypeScript)
+# Advent of Code 2022 Solutions (in TypeScript)
 
 - Day 01
   - [x] First star
