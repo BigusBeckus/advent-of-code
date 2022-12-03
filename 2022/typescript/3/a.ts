@@ -1,38 +1,15 @@
-const puzzleInput = Deno.readTextFileSync("./inputs/3.txt");
-const sampleInput = Deno.readTextFileSync("./inputs/3_sample.txt");
+import { getCommonItemPriority, puzzleInput, sampleInput } from "./common.ts";
 
-function getItemTypePriority(itemType: string) {
-  const itemTypeAscii = itemType.charCodeAt(0);
-  // Assign priorities 1 - 26 to a - z
-  if (itemTypeAscii >= 97 && itemTypeAscii <= 122) {
-    return itemTypeAscii - 96;
-  } // Assign priorites 27 - 52 to A - Z
-  else if (itemTypeAscii >= 65 && itemTypeAscii <= 90) {
-    return itemTypeAscii - 38; // 65 - 27
-  } else {
-    return 0;
+export function getCompartmentalized(input: string, compartmentsCount = 2) {
+  const compartments = [], increment = input.length / compartmentsCount;
+
+  let lastIndex = 0;
+  while (lastIndex < input.length - 1) {
+    compartments.push(input.slice(lastIndex, lastIndex + increment));
+    lastIndex += increment;
   }
+  return compartments;
 }
-
-function getCommonItemPriority(rucksack: string[]) {
-  const [firstCompartment, secondCompartment] = rucksack;
-  for (const item of firstCompartment) {
-    const commonFound = secondCompartment.includes(item);
-    if (commonFound) {
-      return getItemTypePriority(item);
-    }
-  }
-  return 0;
-}
-
-function getCompartmentalized(input: string) {
-  return [
-    input.slice(0, input.length / 2),
-    input.slice(input.length / 2),
-  ];
-}
-
-const sampleCommons: number[] = [], puzzleCommons: number[] = [];
 
 const sample = sampleInput.trim().split("\n").map((rucksack) =>
   getCompartmentalized(rucksack)
@@ -41,6 +18,7 @@ const puzzle = puzzleInput.trim().split("\n").map((rucksack) =>
   getCompartmentalized(rucksack)
 );
 
+const sampleCommons: number[] = [], puzzleCommons: number[] = [];
 sample.forEach((rucksack) =>
   sampleCommons.push(getCommonItemPriority(rucksack))
 );

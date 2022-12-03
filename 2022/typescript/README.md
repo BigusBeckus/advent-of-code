@@ -8,7 +8,7 @@
   - [x] Second star
 - Day 03
   - [x] First star
-  - [ ] Second star
+  - [x] Second star
 - Day 04
   - [ ] First star
   - [ ] Second star
