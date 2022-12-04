@@ -11,7 +11,7 @@
   - [x] Second star
 - Day 04
   - [x] First star
-  - [ ] Second star
+  - [x] Second star
 - Day 05
   - [ ] First star
   - [ ] Second star
