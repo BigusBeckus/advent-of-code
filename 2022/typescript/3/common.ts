@@ -25,5 +25,5 @@ export function getCommonItemPriority(itemLists: string[]) {
   return 0;
 }
 
-export const puzzleInput = Deno.readTextFileSync("./inputs/3.txt");
-export const sampleInput = Deno.readTextFileSync("./inputs/3_sample.txt");
+export const puzzleInput = Deno.readTextFileSync("../inputs/3.txt");
+export const sampleInput = Deno.readTextFileSync("../inputs/3_sample.txt");

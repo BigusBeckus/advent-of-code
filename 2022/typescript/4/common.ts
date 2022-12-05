@@ -1,6 +1,5 @@
-
-export const puzzleInput = Deno.readTextFileSync("./inputs/4.txt");
-export const sampleInput = Deno.readTextFileSync("./inputs/4_sample.txt");
+export const puzzleInput = Deno.readTextFileSync("../inputs/4.txt");
+export const sampleInput = Deno.readTextFileSync("../inputs/4_sample.txt");
 
 function parseInput(input: string) {
   return input.trim().split("\n").map((pair) =>

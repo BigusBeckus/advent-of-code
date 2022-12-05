@@ -1,5 +1,5 @@
-const sampleInput = Deno.readTextFileSync('./inputs/2_sample.txt');
-const challengeInput = Deno.readTextFileSync('./inputs/2a.txt');
+const sampleInput = Deno.readTextFileSync("../inputs/2_sample.txt");
+const challengeInput = Deno.readTextFileSync("../inputs/2.txt");
 
 // Legend
 // ===
@@ -30,11 +30,11 @@ const challengeInput = Deno.readTextFileSync('./inputs/2a.txt');
 
 function getShapeScore(letter: string) {
   switch (letter) {
-    case 'A':
+    case "A":
       return 1;
-    case 'B':
+    case "B":
       return 2;
-    case 'C':
+    case "C":
       return 3;
     default:
       return 0;
@@ -45,7 +45,7 @@ function getWinnerShapeScore(loserScore: number) {
   switch (loserScore) {
     case 1:
       return 2;
-    case 2: 
+    case 2:
       return 3;
     case 3:
       return 1;
@@ -58,7 +58,7 @@ function getLoserShapeScore(winnerScore: number) {
   switch (winnerScore) {
     case 1:
       return 3;
-    case 2: 
+    case 2:
       return 1;
     case 3:
       return 2;
@@ -70,12 +70,12 @@ function getLoserShapeScore(winnerScore: number) {
 function getRoundScore(opponentShape: string, outcome: string) {
   const opponentShapeScore = getShapeScore(opponentShape);
   // Draw
-  if (outcome === 'Y') {
+  if (outcome === "Y") {
     return opponentShapeScore + 3;
   }
 
   // Win
-  if (outcome === 'Z') {
+  if (outcome === "Z") {
     return getWinnerShapeScore(opponentShapeScore) + 6;
   }
 
@@ -84,11 +84,12 @@ function getRoundScore(opponentShape: string, outcome: string) {
 }
 
 function getTotalScore(input: string) {
-  const plays = input.trimEnd().split('\n').map(line => line.split(' '));
+  const plays = input.trimEnd().split("\n").map((line) => line.split(" "));
   console.log(plays.length + " rounds");
-  console.log(plays.reduce((prev, curr) => prev + getRoundScore(curr[0], curr[1]), 0));
+  console.log(
+    plays.reduce((prev, curr) => prev + getRoundScore(curr[0], curr[1]), 0),
+  );
 }
 
 getTotalScore(sampleInput);
 getTotalScore(challengeInput);
-
