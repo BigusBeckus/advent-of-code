@@ -8,12 +8,12 @@ function execute(input: { crates: CrateStack[]; moves: Move[] }) {
       crate.index === move.destination
     );
     if (source && destination) {
-      let count = move.count;
-      while (count-- > 0) {
-        const transferedCrate = source.crates.pop();
-        if (transferedCrate) {
-          destination.crates.push(transferedCrate);
-        }
+      const transferedCrates = source.crates.splice(
+        source.crates.length - move.count,
+        source.crates.length,
+      );
+      if (transferedCrates) {
+        destination.crates = [...destination.crates, ...transferedCrates];
       }
     }
   });
