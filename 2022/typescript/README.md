@@ -16,8 +16,8 @@
   - [x] First star
   - [x] Second star
 - Day 06
-  - [ ] First star
-  - [ ] Second star
+  - [x] First star
+  - [x] Second star
 - Day 07
   - [ ] First star
   - [ ] Second star
