@@ -4,5 +4,5 @@
 
 | Language   | Progress                          |
 | ---------- | --------------------------------- |
-| TypeScript | ![](https://geps.dev/progress/24) |
+| TypeScript | ![](https://geps.dev/progress/28) |
 | Rust       | ![](https://geps.dev/progress/0)  |

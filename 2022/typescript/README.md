@@ -20,7 +20,7 @@
   - [x] Second star
 - Day 07
   - [x] First star
-  - [ ] Second star
+  - [x] Second star
 - Day 08
   - [ ] First star
   - [ ] Second star
