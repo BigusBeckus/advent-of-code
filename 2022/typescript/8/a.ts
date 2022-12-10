@@ -1,16 +1,6 @@
-const sampleInput = Deno.readTextFileSync("../inputs/8_sample.txt");
-const puzzleInput = Deno.readTextFileSync("../inputs/8.txt");
+import { puzzle, sample } from "./common.ts";
 
-function parseInput(input: string) {
-  return input.trim().split("\n").map((line) =>
-    line.split("").map((character) => parseInt(character))
-  );
-}
-
-const sample = parseInput(sampleInput);
-const puzzle = parseInput(puzzleInput);
-
-function isVisible(list: number[], index: number, direction: string) {
+function isVisible(list: number[], index: number) {
   const item = list[index];
   // console.log("Direction: ", direction);
   // console.log("Number: ", list[index]);
@@ -40,8 +30,8 @@ function getVisibleTreesCount(grid: number[][]) {
         visibleTrees.push(col);
         continue;
       }
-      const visible = isVisible(row, j, "Horizontal") ||
-        isVisible(grid.map((line) => line[j]), i, "Vertical");
+      const visible = isVisible(row, j) ||
+        isVisible(grid.map((line) => line[j]), i);
       if (visible) {
         visibleTrees.push(col);
         // console.log("Added: ", col);
