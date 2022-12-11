@@ -1,17 +1,7 @@
-const puzzleInput = Deno.readTextFileSync("../inputs/9.txt");
+import { getPositionString, Position, puzzle } from "./common.ts";
+
 const sampleInput = Deno.readTextFileSync("../inputs/9_sample.txt");
-
-export const sample = sampleInput.trim().split("\n");
-export const puzzle = puzzleInput.trim().split("\n");
-
-type Position = {
-  x: number;
-  y: number;
-};
-
-function getPositionString(position: Position) {
-  return `${position.x},${position.y}`;
-}
+const sample = sampleInput.trim().split("\n");
 
 function move(
   head: Position,

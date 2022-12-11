@@ -25,7 +25,7 @@
   - [x] First star
   - [x] Second star
 - Day 09
-  - [ ] First star
+  - [x] First star
   - [ ] Second star
 - Day 10
   - [ ] First star
